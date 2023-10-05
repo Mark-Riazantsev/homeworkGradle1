@@ -1,8 +1,7 @@
 package ru.netology.service;
 
-import  org.junit.Assert;
+import org.junit.Assert;
 import org.junit.Test;
-
 
 
 public class CashbackHackServiceTest {
@@ -12,9 +11,10 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int result = cashbackHackService.remain(0);
 
-        Assert.assertEquals(result, 1000);
+        Assert.assertEquals(result, 0);
 
     }
+
     @Test
     public void couldRemainIfAmountPositive() {
         CashbackHackService cashbackHackService = new CashbackHackService();
@@ -23,6 +23,16 @@ public class CashbackHackServiceTest {
         Assert.assertEquals(result, 500);
 
     }
+
+    @Test
+    public void couldRemainIfAmountNegative() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int result = cashbackHackService.remain(-1000);
+
+        Assert.assertEquals(result, 0);
+
+    }
+
     @Test
     public void couldRemainIfExistsBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
