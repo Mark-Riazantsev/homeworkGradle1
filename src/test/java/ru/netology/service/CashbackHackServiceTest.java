@@ -12,7 +12,7 @@ public class CashbackHackServiceTest {
         CashbackHackService cashbackHackService = new CashbackHackService();
         int result = cashbackHackService.remain(0);
 
-        Assert.assertEquals(result, 0);
+        Assert.assertEquals(result, 1000);
 
     }
     @Test
@@ -31,6 +31,15 @@ public class CashbackHackServiceTest {
         Assert.assertEquals(result, 0);
 
     }
+    @Test
+    public void IfAmountEquallyBoundary() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int result = cashbackHackService.remain(1000);
+
+        Assert.assertEquals(result, 0);
+
+    }
+
     @Test
     public void couldRemainIfExistsBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
