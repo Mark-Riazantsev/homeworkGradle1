@@ -31,6 +31,7 @@ public class CashbackHackServiceTest {
         Assert.assertEquals(result, 0);
 
     }
+
     @Test
     public void IfAmountEquallyBoundary() {
         CashbackHackService cashbackHackService = new CashbackHackService();
